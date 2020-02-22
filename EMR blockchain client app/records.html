@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MCL EMR</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+  <a class="navbar-brand mr-1" href="index.html">MCL EMR Blockchain</a>
+
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Search -->
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Navbar -->
+  <ul class="navbar-nav ml-auto ml-md-0">
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bell fa-fw"></i>
+        <span class="badge badge-danger">9+</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-envelope fa-fw"></i>
+        <span class="badge badge-danger">7</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow">
+      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle fa-fw"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="#">Settings</a>
+        <a class="dropdown-item" href="#">Activity Log</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+      </div>
+    </li>
+  </ul>
+
+</nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="doctors.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Doctors</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="patients.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Patients</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="records.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Records</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="appointments.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Appointments</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="bills.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Bills</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="moneypools.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Moneypools</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="regulators.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Regulators</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="histories.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Histories</span></a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Record</li>
+          </ol>
+
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>Record Table
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AddRecordModal" style="margin-left: 20px"> Add Record </button>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#UpdatePastVisitModal"> Update Past Visit </button>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#UpdateContactModal"> Update Contact </button>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ShareRecordModal"> Share Record </button>
+            </div>
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>PatientRecordID</th>
+                      <th>PatientID</th>
+                      <th>DoctorID</th>
+                      <th>PersonalDetails</th>
+                      <th>ContactDetails</th>
+                      <th>PastVisit</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">
+                <p>Updated at <span id="datetime"></span></p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © MCL EMR Blockchain System 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal Modal-->
+    <div class="modal fade" id="PersonalModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Personal Details</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="firstname" class="col-form-label">FirstName:</label>
+                <input type="text" class="form-control" id="firstname" readonly>
+              </div>
+              <div class="form-group">
+                <label for="lastname" class="col-form-label">LastName:</label>
+                <input type="text" class="form-control" id="lastname" readonly>
+              </div>
+              <div class="form-group">
+                <label for="dayOfBirth" class="col-form-label">Day Of Birth:</label>
+                <input type="text" class="form-control" id="dayOfBirth" readonly>
+              </div>
+              <div class="form-group">
+                <label for="gender" class="col-form-label">Gender:</label>
+                <input type="text" class="form-control" id="gender" readonly>
+              </div>
+              <div class="form-group">
+                <label for="race" class="col-form-label">Race:</label>
+                <input type="text" class="form-control" id="race" readonly>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Modal-->
+    <div class="modal fade" id="ContactModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contact Details</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="text" class="form-control" id="email" readonly>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input type="text" class="form-control" id="phone" readonly>
+              </div>
+              <div class="form-group">
+                <label for="city" class="col-form-label">City:</label>
+                <input type="text" class="form-control" id="city" readonly>
+              </div>
+              <div class="form-group">
+                <label for="country" class="col-form-label">Country:</label>
+                <input type="text" class="form-control" id="country" readonly>
+              </div>
+              <div class="form-group">
+                <label for="street" class="col-form-label">Street:</label>
+                <input type="text" class="form-control" id="street" readonly>
+              </div>
+              <div class="form-group">
+                <label for="zip" class="col-form-label">Zip:</label>
+                <input type="text" class="form-control" id="zip" readonly>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Record Modal-->
+    <div class="modal fade" id="AddRecordModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create Record</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="patientRecordID" class="col-form-label">PatientRecordID:</label>
+                <input type="text" class="form-control" id="patientRecordID">
+              </div>
+              <div class="form-group">
+                <label for="patient" class="col-form-label">PatientID:</label>
+                <input type="text" class="form-control" id="patient">
+              </div>
+              <div class="form-group">
+                <label for="doctor" class="col-form-label">DoctorID:</label>
+                <input type="text" class="form-control" id="doctor">
+              </div>
+              <div class="form-group">
+                <label for="patientfirstName" class="col-form-label">FirstName:</label>
+                <input type="text" class="form-control" id="patientfirstName">
+              </div>
+              <div class="form-group">
+                <label for="patientlastName" class="col-form-label">LastName:</label>
+                <input type="text" class="form-control" id="patientlastName">
+              </div>
+              <div class="form-group">
+                <label for="patientdayOfBirth" class="col-form-label">Day Of Birth:</label>
+                <input type="text" class="form-control" id="patientdayOfBirth" placeholder="90/01/01">
+              </div>
+              <div class="form-group">
+                <p class="col-form-label">Gender:</p>
+                  <input class="custom-checkbox" type="checkbox" value="MALE">MALE
+                  <input class="custom-checkbox" type="checkbox" value="FEMALE">FEMALE
+                  <input class="custom-checkbox" type="checkbox" value="OTHER">OTHER
+                </label>
+              </div>
+              <div class="form-group">
+                <p for="patientrace" class="col-form-label">Race:</p>
+                  <input class="custom-radio" type="radio" value="ASIAN">ASIAN
+                  <input class="custom-radio" type="radio" value="WHITE">WHITE
+                  <input class="custom-radio" type="radio" value="BLACK">BLACK
+                  <input class="custom-radio" type="radio" value="HISPANIC">HISPANIC
+                  <input class="custom-radio" type="radio" value="TWO_OR_MORE">TWO_OR_MORE
+                  <input class="custom-radio" type="radio" value="OTHER">OTHER
+              </div>
+              <div class="form-group">
+                <label for="patientemail" class="col-form-label">Email:</label>
+                <input type="text" class="form-control" id="patientemail">
+              </div>
+              <div class="form-group">
+                <label for="patientphone" class="col-form-label">Phone:</label>
+                <input type="text" class="form-control" id="patientphone">
+              </div>
+              <div class="form-group">
+                <label for="patientcity" class="col-form-label">City:</label>
+                <input type="text" class="form-control" id="patientcity">
+              </div>
+              <div class="form-group">
+                <label for="patientcountry" class="col-form-label">Country:</label>
+                <input type="text" class="form-control" id="patientcountry">
+              </div>
+              <div class="form-group">
+                <label for="patientstreet" class="col-form-label">Street:</label>
+                <input type="text" class="form-control" id="patientstreet">
+              </div>
+              <div class="form-group">
+                <label for="patientzip" class="col-form-label">Zip:</label>
+                <input type="text" class="form-control" id="patientzip">
+              </div>
+              <div class="form-group">
+                <label for="patientvisitDate" class="col-form-label">VisitDate:</label>
+                <input type="text" class="form-control" id="patientvisitDate" placeholder="2018-09-20T07:14:20.587Z">
+              </div>
+              <div class="form-group">
+                <label for="patientprocedure" class="col-form-label">Procedure:</label>
+                <input type="text" class="form-control" id="patientprocedure">
+              </div>
+              <div class="form-group">
+                <label for="patientmedicinePrescribed" class="col-form-label">MedicinePrescribed:</label>
+                <input type="text" class="form-control" id="patientmedicinePrescribed">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" id="addRecord">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visit Modal-->
+    <div class="modal fade" id="VisitModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Past Visit</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="treatingdoctor" class="col-form-label">TreatingDoctor:</label>
+                <input type="text" class="form-control" id="treatingdoctor" readonly>
+              </div>
+              <div class="form-group">
+                <label for="visitDate" class="col-form-label">VisitDate:</label>
+                <input type="text" class="form-control" id="visitDate" readonly>
+              </div>
+              <div class="form-group">
+                <label for="procedure" class="col-form-label">Procedure:</label>
+                <input type="text" class="form-control" id="procedure" readonly>
+              </div>
+              <div class="form-group">
+                <label for="medicinePrescribed" class="col-form-label">MedicinePrescribed:</label>
+                <input type="text" class="form-control" id="medicinePrescribed" readonly>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Past Visit Modal-->
+    <div class="modal fade" id="UpdatePastVisitModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Submit Transaction</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="newpatientRecordID" class="col-form-label">PatientRecordID:</label>
+                <input type="text" class="form-control" id="newpatientRecordID">
+              </div>
+              <div class="form-group">
+                <label for="newvisitDate" class="col-form-label">VisitDate:</label>
+                <input type="text" class="form-control" id="newvisitDate" placeholder="2018-09-20T07:14:20.587Z">
+              </div>
+              <div class="form-group">
+                <label for="newprocedure" class="col-form-label">Procedure:</label>
+                <input type="text" class="form-control" id="newprocedure">
+              </div>
+              <div class="form-group">
+                <label for="newdoctor" class="col-form-label">DoctorID:</label>
+                <input type="text" class="form-control" id="newdoctor">
+              </div>
+              <div class="form-group">
+                <label for="newmedicinePrescribed" class="col-form-label">MedicinePrescribed:</label>
+                <input type="text" class="form-control" id="newmedicinePrescribed">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" id="updatePastVisit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Contact Modal-->
+    <div class="modal fade" id="UpdateContactModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Submit Transaction</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="patientRecord" class="col-form-label">PatientRecord:</label>
+                <input type="text" class="form-control" id="patientRecord">
+              </div>
+              <div class="form-group">
+                <label for="newemail" class="col-form-label">Email:</label>
+                <input type="text" class="form-control" id="newemail">
+              </div>
+              <div class="form-group">
+                <label for="newphone" class="col-form-label">Phone:</label>
+                <input type="text" class="form-control" id="newphone">
+              </div>
+              <div class="form-group">
+                <label for="newcity" class="col-form-label">City:</label>
+                <input type="text" class="form-control" id="newcity">
+              </div>
+              <div class="form-group">
+                <label for="newcountry" class="col-form-label">Country:</label>
+                <input type="text" class="form-control" id="newcountry">
+              </div>
+              <div class="form-group">
+                <label for="newstreet" class="col-form-label">Street:</label>
+                <input type="text" class="form-control" id="newstreet">
+              </div>
+              <div class="form-group">
+                <label for="newzip" class="col-form-label">Zip:</label>
+                <input type="text" class="form-control" id="newzip">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" id="updateContact">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share Record Modal-->
+    <div class="modal fade" id="ShareRecordModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Submit Transaction</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="sharedDoctor" class="col-form-label">DoctorID:</label>
+                <input type="text" class="form-control" id="sharedDoctor">
+              </div>
+              <div class="form-group">
+                <label for="sharedRecord" class="col-form-label">PatientRecordID:</label>
+                <input type="text" class="form-control" id="sharedRecord">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" id="shareRecord">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Record Modal-->
+    <div class="modal fade" id="DeleteRecordModal" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Record</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <p id="deleteID"></p>
+                    </div>
+                <p>Select "Confirm" below if you are ready to delete the current record.</p>
+                </form>
+            </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" id="deleteRecord">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            getRecord();
+/*            $.get("http://192.168.0.21:3000/api/Doctor", function(data, status){
+                for(var i=0;i<data.length;i++){
+                    var htm = "";
+                    htm += '<tr><td>'+ data[i].department+ '</td><td id="'+data[i].doctorID+'">'
+                    + data[i].doctorID + '</td><td>' + data[i].firstname + '</td><td>'
+                    + data[i].lastname + '</td><td>' + data[i].title + '</td><td>'
+                    + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#EditDoctorModal" data-id="'+data[i].doctorID+'" data-department="'+data[i].department+'" data-firstname="'+data[i].firstname+'" data-lastname="'+data[i].lastname+'" data-title="'+data[i].title+'">Edit </button>'
+                    + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#DeleteDoctorModal" data-id="'+data[i].doctorID+'">Delete </button>'
+                    + '</td></tr>'
+                    $('#dataTable tbody').append(htm);
+                }
+                $('#dataTable').DataTable();
+            });*/
+        });
+
+        function getRecord(){
+            $.get("http://192.168.0.21:3000/api/PatientRecord", function(data, status){
+                for(var i=0;i<data.length;i++){
+                    var htm = "";
+                    htm += '<tr><td>'+ data[i].PatientRecordID+ '</td><td>'
+                        + data[i].patient + '</td><td>'
+                        + data[i].doctor + '</td><td>'
+                        + '<a href="#" data-toggle="modal" data-target="#PersonalModal" data-firstname="'+data[i].name.firstName+'" data-lastname="'+data[i].name.lastName+'" data-dayofbirth="'+data[i].dayOfBirth+'" data-gender="'+data[i].gender+'" data-race="'+data[i].race+'">personal details</a></td><td>'
+                        + '<a href="#" data-toggle="modal" data-target="#ContactModal" data-email="'+data[i].contactDetails.email+'" data-phone="'+data[i].contactDetails.phone+'" data-city="'+data[i].contactDetails.address.city+'" data-country="'+data[i].contactDetails.address.country+'" data-street="'+data[i].contactDetails.address.street+'" data-zip="'+data[i].contactDetails.address.zip+'">contact details</a></td><td>'
+                        + '<a href="#" data-toggle="modal" data-target="#VisitModal" data-treatingdoctor="'+data[i].pastVisitsArray.doctor+'" data-visitdate="'+data[i].pastVisitsArray.visitDate+'" data-procedure="'+data[i].pastVisitsArray.procedure+'" data-medicineprescribed="'+data[i].pastVisitsArray.medicinePrescribed+'">past visit</a></td><td>'
+                        + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#DeleteRecordModal" data-id="'+data[i].PatientRecordID+'">Delete </button>'
+                        + '</td></tr>'
+                    $('#dataTable tbody').append(htm);
+                }
+                $('#dataTable').DataTable();
+            });
+        }
+
+        $('#addRecord').click(function () {
+            var patientRecordID = $('#patientRecordID').val();
+            var patient = 'resource:composers.participants.Patient#'+$('#patient').val();
+            var doctor = 'resource:composers.participants.Doctor#'+$('#doctor').val();
+            $.ajax({
+                url: "http://192.168.0.21:3000/api/PatientRecord/",
+                method: "POST",
+                data: {
+                    $class: "composers.healthrecords.PatientRecord",
+                    PatientRecordID: patientRecordID,
+                    patient: patient,
+                    doctor: doctor,
+                    name: {
+                        $class: "composers.healthrecords.Name",
+                        firstName: $('#patientfirstName').val(),
+                        lastName: $('#patientlastName').val()
+                    },
+                    contactDetails: {
+                        $class: "composers.healthrecords.ContactDetails",
+                        email: $('#patientemail').val(),
+                        phone: $('#patientphone').val(),
+                        address: {
+                            $class: "composers.healthrecords.Address",
+                            city: $('#patientcity').val(),
+                            country: $('#patientcountry').val(),
+                            street: $('#patientstreet').val(),
+                            zip: $('#patientzip').val()
+                        }
+                    },
+                    dayOfBirth: $('#patientdayOfBirth').val(),
+                    gender: $('.custom-checkbox').val(),
+                    race: $('.custom-radio').val(),
+                    pastVisitsArray: {
+                        $class: "composers.healthrecords.Visits",
+                        visitDate: $('#patientvisitDate').val(),
+                        procedure: [
+                            $('#patientprocedure').val(),
+                        ],
+                        doctor: doctor,
+                        medicinePrescribed: [
+                            $('#patientmedicinePrescribed').val(),
+                        ]
+                    }
+                }
+            }).done(function(msg) {
+                // alert(msg.doctorID);
+                alert(patientRecordID + " Successfully Created");
+                location.reload(true);
+            });
+        });
+
+        $('#PersonalModal').on('shown.bs.modal',function (event) {
+            var button = $(event.relatedTarget);
+            var firstname = button.data('firstname');
+            var lastname = button.data('lastname');
+            var dayOfBirth = button.data('dayofbirth');
+            var gender = button.data('gender');
+            var race = button.data('race');
+            var modal = $(this);
+            modal.find('#firstname').val(firstname);
+            modal.find('#lastname').val(lastname);
+            modal.find('#dayOfBirth').val(dayOfBirth);
+            modal.find('#gender').val(gender);
+            modal.find('#race').val(race);
+        });
+
+        $('#ContactModal').on('shown.bs.modal',function (event) {
+            var button = $(event.relatedTarget);
+            var email = button.data('email');
+            var phone = button.data('phone');
+            var city = button.data('city');
+            var country = button.data('country');
+            var street = button.data('street');
+            var zip = button.data('zip');
+            var modal = $(this);
+            modal.find('#email').val(email);
+            modal.find('#phone').val(phone);
+            modal.find('#city').val(city);
+            modal.find('#country').val(country);
+            modal.find('#street').val(street);
+            modal.find('#zip').val(zip);
+        });
+
+        $('#VisitModal').on('shown.bs.modal',function (event) {
+            var button = $(event.relatedTarget);
+            var treatingdoctor = button.data('treatingdoctor');
+            var visitDate = button.data('visitdate');
+            var procedure = button.data('procedure');
+            var medicinePrescribed = button.data('medicineprescribed');
+            var modal = $(this);
+            modal.find('#visitDate').val(visitDate);
+            modal.find('#procedure').val(procedure);
+            modal.find('#medicinePrescribed').val(medicinePrescribed);
+            modal.find('#treatingdoctor').val(treatingdoctor);
+        });
+
+        //update past visit transaction
+        $('#updatePastVisit').click(function () {
+            var newpatientRecordID = 'resource:composers.healthrecords.PatientRecord#'+$('#newpatientRecordID').val();
+            var newvisitDate = $('#newvisitDate').val();
+            var newdoctor = 'resource:composers.participants.Doctor#'+$('#newdoctor').val();
+            var url = "http://192.168.0.21:3000/api/updatePastVisits/";
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: {
+                    $class: "composers.healthrecords.updatePastVisits",
+                    newVisit: {
+                        $class: "composers.healthrecords.Visits",
+                        visitDate: newvisitDate,
+                        procedure: [
+                            $('#newprocedure').val(),
+                        ],
+                        doctor: newdoctor,
+                        medicinePrescribed: [
+                            $('#newmedicinePrescribed').val(),
+                        ]
+                    },
+                    patientRecord:newpatientRecordID
+                }
+            }).done(function(msg) {
+                // alert(msg.doctorID);
+                alert(newpatientRecordID + " Successfully Updated");
+                location.reload(true);
+            });
+        });
+
+        //update contact transaction
+        $('#updateContact').click(function () {
+            var patientRecordID = 'resource:composers.healthrecords.PatientRecord#'+$('#patientRecord').val();
+            var url = "http://192.168.0.21:3000/api/updateContact/";
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: {
+                    $class: "composers.healthrecords.updateContact",
+                    contactDetails: {
+                        $class: "composers.healthrecords.ContactDetails",
+                        email: $('#newemail').val(),
+                        phone: $('#newphone').val(),
+                        address: {
+                            $class: "composers.healthrecords.Address",
+                            city: $('#newcity').val(),
+                            country: $('#newcountry').val(),
+                            street: $('#newstreet').val(),
+                            zip: $('#newzip').val()
+                        }
+                    },
+                    patientRecord: patientRecordID
+                }
+            }).done(function(msg) {
+                // alert(msg.doctorID);
+                alert(patientRecordID + " Successfully Updated");
+                location.reload(true);
+            });
+        });
+
+        //share record transaction
+        $('#shareRecord').click(function () {
+            var patientRecordID = 'resource:composers.healthrecords.PatientRecord#'+$('#sharedRecord').val();
+            var doctorID = 'resource:composers.participants.Doctor#'+$('#sharedDoctor').val();
+            var url = "http://192.168.0.21:3000/api/shareRecordWithDoctor/";
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: {
+                    $class: "composers.healthrecords.shareRecordWithDoctor",
+                    doctorId: doctorID,
+                    patientRecord: patientRecordID
+                }
+            }).done(function(msg) {
+                // alert(msg.doctorID);
+                alert(patientRecordID + " Successfully Shared with " + doctorID);
+                location.reload(true);
+            });
+        });
+
+        $('#DeleteRecordModal').on('shown.bs.modal',function (event) {
+            var button = $(event.relatedTarget);
+            var recordID = button.data('id');
+            var modal = $(this);
+            modal.find('#deleteID').text(recordID);
+        });
+
+       $('#deleteRecord').click(function () {
+            var recordID = $('#deleteID').text();
+            var api = "http://192.168.0.21:3000/api/PatientRecord/";
+            var url = api.concat(recordID);
+            $.ajax({
+                url: url,
+                method: "DELETE",
+            }).fail(function(msg) {
+                // alert(msg.doctorID);
+                alert(recordID + " Successfully Deleted");
+                location.reload(true);
+            });
+        });
+
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+
+    </script>
+
+  </body>
+
+</html>

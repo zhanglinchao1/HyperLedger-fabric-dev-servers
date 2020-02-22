@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MCL EMR</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+  </head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+  <a class="navbar-brand mr-1" href="index.html">MCL EMR Blockchain</a>
+
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Search -->
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Navbar -->
+  <ul class="navbar-nav ml-auto ml-md-0">
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bell fa-fw"></i>
+        <span class="badge badge-danger">9+</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow mx-1">
+      <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-envelope fa-fw"></i>
+        <span class="badge badge-danger">7</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown no-arrow">
+      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle fa-fw"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="#">Settings</a>
+        <a class="dropdown-item" href="#">Activity Log</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+      </div>
+    </li>
+  </ul>
+
+</nav>
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="charts.html">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Charts</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="doctors.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Doctors</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="patients.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Patients</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="records.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Records</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="appointments.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Appointments</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="bills.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Bills</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="moneypools.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Moneypools</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="regulators.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Regulators</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="histories.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Histories</span></a>
+    </li>
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Patient</li>
+      </ol>
+
+      <!-- DataTables Example -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>Patient Table
+          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AddPatientModal" style="margin-left: 20px"> Add Patient </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+              <th>PatientID</th>
+              <th>BalanceDue</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Title</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="date_time" class="card-footer small text-muted">
+        <p>Updated at <span id="datetime"></span></p>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container-fluid -->
+
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright © MCL EMR Blockchain System 2018</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Patient Modal-->
+<div class="modal fade" id="AddPatientModal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Patient</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="patientID" class="col-form-label">PatientID:</label>
+            <input type="text" class="form-control" id="patientID">
+          </div>
+          <div class="form-group">
+            <label for="balanceDue" class="col-form-label">BalanceDue:</label>
+            <input type="text" class="form-control" id="balanceDue">
+          </div>
+          <div class="form-group">
+            <label for="firstname" class="col-form-label">Firstname:</label>
+            <input type="text" class="form-control" id="firstname">
+          </div>
+          <div class="form-group">
+            <label for="lastname" class="col-form-label">Lastname:</label>
+            <input type="text" class="form-control" id="lastname">
+          </div>
+          <div class="form-group">
+            <label for="title" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" id="addPatient">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Patient Modal-->
+<div class="modal fade" id="EditPatientModal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Patient</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="newpatientID" class="col-form-label">PatientID:</label>
+            <input type="text" class="form-control" id="newpatientID" readonly>
+          </div>
+          <div class="form-group">
+            <label for="newbalanceDue" class="col-form-label">BalanceDue:</label>
+            <input type="text" class="form-control" id="newbalanceDue">
+          </div>
+          <div class="form-group">
+            <label for="newfirstname" class="col-form-label">Firstname:</label>
+            <input type="text" class="form-control" id="newfirstname">
+          </div>
+          <div class="form-group">
+            <label for="newlastname" class="col-form-label">Lastname:</label>
+            <input type="text" class="form-control" id="newlastname">
+          </div>
+          <div class="form-group">
+            <label for="newtitle" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="newtitle">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" id="editPatient">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Patient Modal-->
+<div class="modal fade" id="DeletePatientModal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Patient</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <p id="deleteID"></p>
+          </div>
+          Select "Confirm" below if you are ready to delete the current patient.
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" id="deletePatient">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="vendor/datatables/jquery.dataTables.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        getPatient();
+        /*            $.get("http://192.168.0.21:3000/api/Doctor", function(data, status){
+                        for(var i=0;i<data.length;i++){
+                            var htm = "";
+                            htm += '<tr><td>'+ data[i].department+ '</td><td id="'+data[i].doctorID+'">'
+                            + data[i].doctorID + '</td><td>' + data[i].firstname + '</td><td>'
+                            + data[i].lastname + '</td><td>' + data[i].title + '</td><td>'
+                            + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#EditDoctorModal" data-id="'+data[i].doctorID+'" data-department="'+data[i].department+'" data-firstname="'+data[i].firstname+'" data-lastname="'+data[i].lastname+'" data-title="'+data[i].title+'">Edit </button>'
+                            + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#DeleteDoctorModal" data-id="'+data[i].doctorID+'">Delete </button>'
+                            + '</td></tr>'
+                            $('#dataTable tbody').append(htm);
+                        }
+                        $('#dataTable').DataTable();
+                    });*/
+    });
+
+    function getPatient(){
+        $.get("http://localhost:3000/api/Trader", function(data, status){
+            for(var i=0;i<data.length;i++){
+                var htm = "";
+                htm += '<tr><td>'+ data[i].tradeId+ '</td><td>'
+                    + data[i].balanceDue + '</td><td>' + data[i].firstname + '</td><td>'
+                    + data[i].lastname + '</td><td>'
+                    + data[i].title + '</td><td>'
+                    + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#EditPatientModal" data-id="'+data[i].patientID+'" data-balance="'+data[i].balanceDue+'" data-firstname="'+data[i].firstname+'" data-lastname="'+data[i].lastname+'" data-title="'+data[i].title+'">Edit </button>'
+                    + '<button type="button" class="btn btn btn-link" data-toggle="modal" data-target="#DeletePatientModal" data-id="'+data[i].patientID+'">Delete </button>'
+                    + '</td></tr>'
+                $('#dataTable tbody').append(htm);
+            }
+            $('#dataTable').DataTable();
+        });
+    }
+
+    $('#addPatient').click(function () {
+        var tradeId = $('#tradeId').val();
+        $.ajax({
+            url: "http://localhost:3000/api/Trader",
+            method: "POST",
+            data: {
+                $class : 'org.example.mynetwork.Trader',
+                tradeId : tradeId,
+                balanceDue : $('#balanceDue').val(),
+                firstname : $('#firstname').val(),
+                lastname : $('#lastname').val(),
+                title : $('#title').val()
+            }
+        }).done(function(msg) {
+            // alert(msg.doctorID);
+            alert(tradeId + " Successfully Created");
+            location.reload(true);
+        });
+    });
+
+    $('#EditPatientModal').on('shown.bs.modal',function (event) {
+        var button = $(event.relatedTarget);
+        var tradeId = button.data('id');
+        var balanceDue = button.data('balance');
+        var firstname = button.data('firstname');
+        var lastname = button.data('lastname');
+        var title = button.data('title');
+        var modal = $(this);
+        modal.find('#newtradeId').val(tradeId);
+        modal.find('#newbalanceDue').val(balanceDue);
+        modal.find('#newfirstname').val(firstname);
+        modal.find('#newlastname').val(lastname);
+        modal.find('#newtitle').val(title);
+    });
+
+    $('#editPatient').click(function () {
+        var newtradeId = $('#newtradeId').val();
+        var newbalanceDue = $('#newbalanceDue').val();
+        var newfirstname = $('#newfirstname').val();
+        var newlastname = $('#newlastname').val();
+        var newtitle = $('#newtitle').val();
+        var api = "http://localhost:3000/api/Trader";
+        var url = api.concat(newpatientID);
+        $.ajax({
+            url: url,
+            method: "PUT",
+            data: {
+                $class : 'org.example.mynetwork.Trader',
+                patientID : newtradeId,
+                balanceDue : newbalanceDue,
+                firstname : newfirstname,
+                lastname : newlastname,
+                title : newtitle
+            }
+        }).done(function(msg) {
+            // alert(msg.doctorID);
+            alert(newtradeId + " Successfully Updated");
+            location.reload(true);
+        });
+    });
+
+    $('#DeletePatientModal').on('shown.bs.modal',function (event) {
+        var button = $(event.relatedTarget);
+        var tradeId = button.data('id');
+        var modal = $(this);
+        modal.find('#deleteID').text(tradeId);
+    });
+
+    $('#deletePatient').click(function () {
+        var tradeId = $('#deleteID').text();
+        var api = "http://localhost:3000/api/Trader";
+        var url = api.concat(tradeId);
+        $.ajax({
+            url: url,
+            method: "DELETE",
+        }).fail(function(msg) {
+            // alert(msg.doctorID);
+            alert(tradeId + " Successfully Deleted");
+            location.reload(true);
+        });
+    });
+
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+
+</script>
+
+</body>
+
+</html>
